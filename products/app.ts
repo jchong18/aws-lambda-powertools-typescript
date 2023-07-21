@@ -10,7 +10,7 @@ const dynamoDBTableName = process.env.PRODUCT_TABLE_NAME || '';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const handler = async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
     // Log the incoming event
-    console.info('Lambda invocation event', { event });
+    console.info('Lambda Invocation Event :: ', event);
     // logger.info('Lambda invocation event', { event });
     if (event.httpMethod === 'PUT') {
         return addResponseHeaders(await processPutEvent(event));
